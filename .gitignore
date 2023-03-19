@@ -1,9 +1,5 @@
-index.js
-
-env/
-
-
-./env
+index.js,
+.env,
 
 node_modules/
 
