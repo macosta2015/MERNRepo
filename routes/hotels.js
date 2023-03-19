@@ -1,7 +1,8 @@
 import express from "express";
-import Hotel from "../models/Hotel.js"
+import Hotel from "../models/Hotel.js";
 
 const router = express.Router();
+console.log('We are in hotels.js')
 
 //CREATE
 router.post("/", async (req, res) => {
@@ -16,5 +17,15 @@ router.post("/", async (req, res) => {
     }
 })
 
+//UPDATE
+router.put("/:id", async (req, res) => {
+    try {
+        const updatedHotel = await Hotel.findByIdAndUpdate(req.params.id, { $set: req.body })
+        res.status(200).json(updatedHotel)
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
 
-export default router
+
+export default router 
