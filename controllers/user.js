@@ -1,4 +1,5 @@
 import User from "../models/User.js"
+//Keep working hard
 
 export const updateUser = async (req, res, next) => {
     try {
