@@ -13,7 +13,7 @@ router.get("/checkuser/:id", verifyUser, (req, res, next) => {
     res.send("Hello user, you are logged in and you can delete your account")
 })
 
-//UPDATE
+//UPDATE 
 router.put("/:id", updateUser);
 
 //DELETE
@@ -26,3 +26,5 @@ router.get("/:id", getUser);
 router.get("/", getUsers);
 
 export default router
+
+//test
