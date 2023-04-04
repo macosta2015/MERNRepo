@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-
 const RoomSchema = new mongoose.Schema(
     {
         title: {
@@ -16,12 +15,11 @@ const RoomSchema = new mongoose.Schema(
         },
         desc: {
             type: String,
-            default: true,
+            required: true,
         },
         roomNumbers: [{ number: Number, unavailableDates: { type: [Date] } }],
     },
     { timestamps: true }
 );
 
-
-export default mongoose.model("User", RoomSchema)
+export default mongoose.model("Room", RoomSchema);
