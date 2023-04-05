@@ -1,12 +1,12 @@
 import express from "express";
 import { verifyAdmin } from '../utils/verifyToken.js';
-import { 
-    createRoom, 
-    getRoom, 
-    getRooms, 
-    deleteRoom, 
+import {
+    createRoom,
+    getRoom,
+    getRooms,
+    deleteRoom,
     updateRoom,
- } from '../controllers/room.js';
+} from '../controllers/room.js';
 
 const router = express.Router();
 //CREATE
@@ -16,7 +16,7 @@ router.post("/:hotelid", verifyAdmin, createRoom);
 router.put("/:id", verifyAdmin, updateRoom);
 
 //DELETE
-router.delete("/:id", verifyAdmin, deleteRoom);
+router.delete("/:id/:hotelid", verifyAdmin, deleteRoom);
 
 //GET
 router.get("/:id", getRoom);
