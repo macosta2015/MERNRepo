@@ -6,7 +6,9 @@ import usersRoute from "./routes/users.js"
 import hotelsRoute from "./routes/hotels.js"
 import roomsRoute from "./routes/rooms.js"
 import cookieParser from "cookie-parser"
-
+import cors from "cors"
+//CORS (Cross-Origin Resource Sharing) is a security feature implemented by web browsers to protect users from malicious websites. 
+//It is used in web development to allow web applications running on one domain to access resources from a different domain.
 
 const app = express()
 dotenv.config()
@@ -31,6 +33,7 @@ mongoose.connection.on("connected", () => {
 })
 
 //Middlewares
+app.use(cors())
 app.use(cookieParser())
 app.use(express.json())
 
