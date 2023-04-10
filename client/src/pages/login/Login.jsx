@@ -34,13 +34,13 @@ function Login() {
                     placeholder="username"
                     id="username"
                     onChange={handleChange}
-                    classname="lInput" />
+                    className="lInput" />
                 <input
                     type="password"
                     placeholder="password"
                     id="password"
                     onChange={handleChange}
-                    classname="lInput" />
+                    className="lInput" />
                 <button onClick={handleClick} className="lButton">login</button>
                 {error && <span>{error.message}</span>}
             </div>
