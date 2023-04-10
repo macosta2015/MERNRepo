@@ -37,5 +37,5 @@ export const SearchContextProvider = ({ children }) => {
         >
             {children}
         </SearchContext.Provider>
-    )
+    );
 };
