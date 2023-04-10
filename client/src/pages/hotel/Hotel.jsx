@@ -10,9 +10,10 @@ import {
   faCircleXmark,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import useFetch from '../../hooks/useFetch';
 import { useLocation } from 'react-router-dom';
+import { SearchContext } from '../../context/SearchContext';
 
 const Hotel = () => {
   const location = useLocation()
@@ -20,8 +21,8 @@ const Hotel = () => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
 
-  const { data, loading, error } = useFetch(`/hotels/find/${id}`)
-
+  const { data, loading, error } = useFetch(`/hotels/find/${id}`);
+  const { dates } = useContext(SearchContext);
   const photos = [
 
   ];
