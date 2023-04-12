@@ -7,7 +7,7 @@ import useFetch from "../../hooks/useFetch";
 
 const Reserve = ({ setOpen, hotelId }) => {
 
-  const { data, loading, error } = useFetch(`hotels/room/${hotelId}`)
+  const { data, loading, error } = useFetch(`/hotels/room/${hotelId}`);
 
   return (
     <div className="reserve">
@@ -18,20 +18,20 @@ const Reserve = ({ setOpen, hotelId }) => {
           onClick={() => setOpen(false)}
         />
         <span>Select your rooms:</span>
-        {data.map(item => (
+        {data.map((item) => (
           <div className="rItem">
             <div className="rItemInfo">
               <div className="rTitle">{item.title}</div>
               <div className="rDesc">{item.desc}</div>
               <div className="rMax">
-                Max People: <b>{item.maxPeople}</b>
+                Max people: <b>{item.maxPeople}</b>
               </div>
             </div>
           </div>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Reserve
