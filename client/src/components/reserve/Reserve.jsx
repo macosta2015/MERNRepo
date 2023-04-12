@@ -1,3 +1,4 @@
+//LIFE IS WHAT YOU MAKE IT
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "./reserve.css"
