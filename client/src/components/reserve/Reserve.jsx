@@ -20,14 +20,15 @@ const Reserve = ({ setOpen, hotelId }) => {
 
     const dates = [];
     while (date <= end) {
-      dates.push(new Date(date).getTime());
+      // dates.push(new Date(date).getTime()); //Usimng timestamps
+      dates.push(new Date(date)); //Gives you easy to read dates.
       date.setDate(date.getDate() + 1);
     }
     return dates
   };
 
   console.log(getDatesInRange(dates[0].startDate, dates[0].endDate))
-  
+
 
   const handleSelect = (e) => {
     const checked = e.target.checked;
