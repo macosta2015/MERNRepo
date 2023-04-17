@@ -71,17 +71,19 @@ const Reserve = ({ setOpen, hotelId }) => {
               </div>
               <div className="rPrice">{item.price}</div>
             </div>
-            {item.roomNumbers.map((roomNumber) => (
-              <div className="room">
-                <label>{roomNumber.number}</label>
-                <input
-                  type="checkbox"
-                  value={roomNumber._id}
-                  onChange={handleSelect}
-                  disabled={!isAvailable(roomNumber)}
-                />
-              </div>
-            ))}
+            <div className="rSelectRooms">
+              {item.roomNumbers.map((roomNumber) => (
+                <div className="room">
+                  <label>{roomNumber.number}</label>
+                  <input
+                    type="checkbox"
+                    value={roomNumber._id}
+                    onChange={handleSelect}
+                    disabled={!isAvailable(roomNumber)}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         ))}
         <button onClick={handleClick} className="rButton">
