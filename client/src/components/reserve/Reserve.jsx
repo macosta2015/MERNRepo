@@ -30,10 +30,10 @@ const Reserve = ({ setOpen, hotelId }) => {
   // co nsole.log(getDatesInRange(dates[0].startDate, dates[0].endDate))
   const alldates = (getDatesInRange(dates[0].startDate, dates[0].endDate))
   const isAvailable = (roomNumber) => {
-
-  }
-
-
+    const isFound = roomNumber.unavailableDates.some((date) =>
+      alldates.includes(new Date(date).getTime())
+    );
+  };
 
   const handleSelect = (e) => {
     const checked = e.target.checked;
