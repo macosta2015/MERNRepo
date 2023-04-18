@@ -48,9 +48,18 @@ const Reserve = ({ setOpen, hotelId }) => {
   };
 
   //Todo
-  const handleClick = () => {
-
-  }
+  const handleClick = async () => {
+    try{
+      await Promise.all(
+        selectedRooms.map((roomId)=>{
+        const res = axios.put(`/rooms/availability/${roomId}`, {
+          dates:alldates,
+        });
+        return res.data;
+      })
+      );
+    }catch(err){}
+  };
 
   return (
     <div className="reserve">
