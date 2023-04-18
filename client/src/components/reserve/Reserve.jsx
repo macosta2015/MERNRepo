@@ -8,6 +8,7 @@ import { useContext } from 'react';
 import { SearchContext } from '../../context/SearchContext';
 
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 const Reserve = ({ setOpen, hotelId }) => {
@@ -50,6 +51,8 @@ const Reserve = ({ setOpen, hotelId }) => {
     );
   };
 
+  const navigate = useNavigate()
+
   //Todo
   const handleClick = async () => {
     try {
@@ -61,6 +64,8 @@ const Reserve = ({ setOpen, hotelId }) => {
           return res.data;
         })
       );
+      setOpen(false)
+      navigate("/")
     } catch (err) { }
   };
 
